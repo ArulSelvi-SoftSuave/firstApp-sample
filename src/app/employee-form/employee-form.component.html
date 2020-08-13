@@ -1,0 +1,56 @@
+<div id="empContainer">
+  <form [formGroup]="empForm">
+    <div>
+      <p class="formheading">Basic Info</p>
+      <div class="labelheading">
+        <label class="first">FirstName</label>
+        <label class="last">LastName</label>
+        <label class="age">Age</label>
+      </div>
+      <div>
+        <input type="text" class="inputField" placeholder="Firstname" formControlName="firstName"/>
+        <input type="text" class="inputField" placeholder="Lastname" formControlName="lastName"/>
+        <input type="text" class="inputField" placeholder="Age" formControlName="age"/>
+      </div>
+      <div class="labelheading">
+        <label class="emailAdd">Email</label>
+        <label class="phonoNo">PhoneNo</label>
+        <label class="mobileNo">MobileNo</label>
+      </div>
+      <div>
+        <input type="email" class="inputField" placeholder="Email" formControlName="email"/>
+        <input type="number" class="inputField" placeholder="PhonoNo" formControlName="phoneNo"/>
+        <input type="number" class="inputField" placeholder="MobileNo" formControlName="mobileNo"/>
+      </div>
+      <div class="labelheading">
+        <label class="emailAdd">Address</label>
+        <label class="city">City</label>
+        <label class="state">State</label>
+      </div>
+      <div>
+        <input type="text" class="inputField" placeholder="Address" formControlName="address"/>
+        <input type="text" class="inputField" placeholder="city" formControlName="city"/>
+        <input type="text" class="inputField" placeholder="state" formControlName="state"/>
+      </div>
+
+      <p class="formheading">employee details</p>
+      <div class="labelheading">
+        <label class="emailAdd">Department</label>
+        <label class="role">Role</label>
+        <label class="expriance">Work experience</label>
+      </div>
+      <div>
+        <input type="text" class="inputField" placeholder="Department" formControlName="department"/>
+        <input type="text" class="inputField" placeholder="Role" formControlName="role"/>
+        <input type="number" class="inputField" placeholder="Experience" formControlName="experience"/>
+
+      </div>
+      <div class="but">
+          <button class="button buttonColor" (click)="save()">Save</button>
+          <button class="button buttonCancel" (click)="cancel()">Cancel</button>
+      </div>
+     
+    </div>
+  </form>
+
+</div>

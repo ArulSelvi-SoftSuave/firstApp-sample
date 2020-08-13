@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 // import { promise } from 'protractor';
 // firebase.initializeApp(environment.firebase);
 import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
-import { Observable, SubscribableOrPromise } from 'rxjs';
+import { Observable } from 'rxjs';
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from "angularfire2/auth";
 import { promise } from 'protractor';
@@ -32,10 +32,11 @@ export class FirebaseAuthService {
 
     async getUserList(): Promise<any> {
       let result;
-      this.list = this.collection.valueChanges();
-      this.list.subscribe((data: any) => {
-        result = data;
-        console.log(data);
+      this.collection.valueChanges().subscribe((data: any) => {
+        if(data){
+          result = data;
+          console.log(data);
+        }
       });
       return result;
     }
@@ -64,4 +65,12 @@ export class FirebaseAuthService {
           .signInWithPopup(new auth.FacebookAuthProvider())
           .then(res => console.log(res));
   }
+  
+  createEmpAccount(data: any): Promise<any>{
+    let fire = this.afs.collection('employee').add(data);
+    console.log(fire);
+    return fire;
+  }
+
+
 }

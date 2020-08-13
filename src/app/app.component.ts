@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,14 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class AppComponent {
   title = 'firstApp';
-  constructor(public afAuth: AngularFireAuth) {}
+  constructor(public afAuth: AngularFireAuth, private router: Router) {}
   ngOnInit() {
     this.afAuth.authState.subscribe(user => {
       console.log(user);
     if (user) {
     // go to home page
     } else {
-    // go to login page
+      this.router.navigate(['login']);
     }
     });
   }

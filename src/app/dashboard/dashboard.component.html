@@ -1,15 +1,39 @@
-<div layout="row">
-  <div class="dashboard">
-    <!-- <icon name="reorder"></icon> -->
-    <div  class="title">
-    <p>Dashboard</p>
+<div id='menuContainer'>
+  <p class='menus' (click)="menuFun()">Menu</p>
+  <div class="menulist" (click)='employee()'>
+    <i class="fa fa-server empIcon" aria-hidden="true"></i>
+    <label>Employee</label>
+  </div>
+</div>
+<div id="mainContainer">
+  <div *ngIf='isdashboard'>
+    <div class="dashboard">
+      <!-- <div class="menu"><i class="fa fa-caret-down" aria-hidden="true" (click)='employee()'></i></div> -->
+      <div  class="title"><p>Dashboard</p></div>
+      <div  class="power-icon"><i class="fas fa-power-off" (click)="logout()"></i></div>
     </div>
-    <div  class="power-icon">
-    <i class="fas fa-power-off" (click)="logout()"></i>
-
+    <div class="mainContent">
+      Welcome to this app
     </div>
   </div>
-  <div class="mainContent">
-    Welcome to this app
+  <div *ngIf="isEmpShow">
+    <div class="dashboard">
+      <div class="title"><p>Employee</p></div>
+      <div class="power-icon"><i class="fa fa-indent" aria-hidden="true" (click)="form()"></i></div>
+    </div>
+    <div>
+      <app-employee-list></app-employee-list>
+    </div>
+
+  </div>
+  <div *ngIf="isForm">
+    <div class="dashboard">
+      <div class="menu"><i class="fa fa-arrow-left" aria-hidden="true" (click)="employee()"></i></div>
+      <div class="title" style="    margin: -16px 0px;"><p>Employee Form</p></div>
+      <!-- <div class="power-icon"><i class="fa fa-indent" aria-hidden="true" (click)="form()"></i></div> -->
+    </div>
+    <div>
+      <app-employee-form (list)="employee()"></app-employee-form>
+    </div>
   </div>
 </div>

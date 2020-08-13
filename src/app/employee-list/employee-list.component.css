@@ -1,0 +1,26 @@
+#empListContainer {
+    height: -webkit-fill-available;
+    position: fixed;
+    width: 80%;
+    margin: 15px 25px;
+    background: whitesmoke;
+    padding: 15px 15px;
+}
+table{
+    position: absolute;
+    width: 98%;
+    text-align: center;
+}
+.tableheading {
+    background: #8a2be252;
+}
+
+.listTitle {
+    font-size: 20px;
+    margin: 16px 0px;
+    color: darkmagenta;
+}
+
+.content {
+    padding: 8px 0px;
+}

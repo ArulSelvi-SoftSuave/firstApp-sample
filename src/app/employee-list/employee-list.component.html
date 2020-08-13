@@ -1,0 +1,27 @@
+<div id="empListContainer">
+  <div class="listTitle">
+    <label>Employee List</label>
+  </div>
+  <table>
+    <tr class="tableheading">
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Mobile</th>
+      <th>Department</th>
+      <th>Role</th>
+    </tr>
+    <tr *ngFor="let data of employeeData">
+      <td class="content">{{data.firstName}}</td>
+      <td class="content">{{data.lastName}}</td>
+      <td class="content">{{data.age}}</td>
+      <td class="content">{{data.email}}</td>
+      <td class="content">{{data.phoneNo}}</td>
+      <td class="content">{{data.mobileNo}}</td>
+      <td class="content">{{data.department}}</td>
+      <td class="content">{{data.role}}</td>
+    </tr>
+  </table>
+</div>

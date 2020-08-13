@@ -30,13 +30,6 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  // loginUserList(){
-  //   this.lUserList = this.firebaseAuth.getUserList().then( result => {
-  //     console.log(result);
-  //     this.lUserList = result;
-  //   });
-  // }
-
   onSubmit(type: string) {
     if(type === 'email' && this.loginForm.valid){
       this.list = this.afs.collection('user').valueChanges();
@@ -59,18 +52,7 @@ export class LoginComponent implements OnInit {
       this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then((result: any) => {
         let profile = result.additionalUserInfo.profile;
         profile ? this.router.navigateByUrl('dashboard') : '';
-
-        // let isUser = false;
-        // this.lUserList.forEach( res=> {
-        //   if(profile.Email === res.Email){
-        //     this.router.navigate(['dashboard']);
-        //     isUser = true;
-        //   } 
-        // });
-        // if(!isUser){
-        //   this.signUp(profile);
-        // }
-        console.log('You have been successfully logged in!', result, result.additionalUserInfo.profile);
+        // console.log('You have been successfully logged in!', result, result.additionalUserInfo.profile);
       }).catch((error) => {
           console.log(error)
       });

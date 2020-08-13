@@ -11,7 +11,9 @@ import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireAuthModule } from "angularfire2/auth"
+import { AngularFireAuthModule } from "angularfire2/auth";
+import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component'
 // import {
 // SocialLoginModule,
 // GoogleLoginProvider,
@@ -41,7 +43,9 @@ import { AngularFireAuthModule } from "angularfire2/auth"
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    EmployeeFormComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,

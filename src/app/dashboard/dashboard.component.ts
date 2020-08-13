@@ -8,11 +8,40 @@ import { AngularFireAuth } from 'angularfire2/auth';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  public isEmpShow = false;
+  public isdashboard = true;
+  public isForm = false;
 
   constructor(private router: Router, public afAuth: AngularFireAuth) { }
 
   ngOnInit() {
   }
+
+  employee() {
+    this.isEmpShow = true;
+    this.isdashboard = false;
+    this.isForm = false;
+
+    // this.router.navigate(['employee-form']);
+  }
+
+  menuFun() {
+    this.isEmpShow = false;
+    this.isdashboard = true;
+    this.isForm = false;
+  }
+
+  form() {
+    this.isEmpShow = false;
+    this.isdashboard = false;
+    this.isForm = true;
+  }
+
+  // back() {
+  //   this.isEmpShow = true;
+  //   this.isdashboard = false;
+  //   this.isForm = false;
+  // }
 
   logout() {
     localStorage.clear();
