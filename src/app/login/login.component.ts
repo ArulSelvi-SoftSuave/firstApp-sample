@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
-import { FirebaseAuthService } from '../firebase-auth.service';
+import { FirebaseAuthService } from '../service/firebase-auth.service';
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from "angularfire2/auth";
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -32,21 +32,20 @@ export class LoginComponent implements OnInit {
 
   onSubmit(type: string) {
     if(type === 'email' && this.loginForm.valid){
-      this.list = this.afs.collection('user').valueChanges();
-      this.list.subscribe((data: any) => {
-        this.lUserList = data;
-        console.log(data);
-        let count = 0;
-    this.isInvalid = true;
-
-        this.lUserList.forEach( res=> {
-          if(this.loginForm.value.email === res.email && this.loginForm.value.password === res.password){
-            this.router.navigate(['dashboard']);
-            this.isInvalid = false;
-          }
-        });
+      this.firebaseAuth.getUserList().subscribe( (userList: any) => {
+        this.isInvalid = true;
+        if(userList){
+          userList.forEach( res=> {
+            if(this.loginForm.value.email === res.email && this.loginForm.value.password === res.password){
+              localStorage.setItem('user', res.email);
+              localStorage.setItem('Email', res.email);
+              localStorage.setItem('FullName', res.FullName);
+              this.router.navigate(['dashboard']);
+              this.isInvalid = false;
+            }
+          });
+        }
       });
-     
     } else if(type === 'google'){
 
       this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then((result: any) => {

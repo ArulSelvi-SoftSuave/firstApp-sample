@@ -1,0 +1,79 @@
+.dashboard {
+    background-color: #8a2be27a;
+    padding: 26px 0px;
+}
+
+.menu {
+    text-align: left;
+    font-size: 18px;
+    margin: 0px 0px -17px 13px;
+    color: white;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: -15px;
+    font-size: 26px;
+    color: white;
+}
+
+#chatMainContainer {
+    position: relative;
+}
+#chatContent {
+    background-color: #f5f5f0;
+    width: 85vw;
+    height: 77vh;
+    margin: auto;
+    position: relative;
+    top: 45px;
+    padding: 25px;
+}
+
+.userlist {
+    width: 23%;
+    height: 77vh;
+    overflow: scroll;
+    position: absolute;
+    padding: 12px;
+    font-size: 16px;
+    border-right: 1px solid;
+}
+
+.chatText {
+    width: 70%;
+    height: 73vh;
+    padding: 12px;
+    margin-left: auto;
+    position: inherit;
+    left: 0;
+    right: 0;
+}
+
+.part {
+    width: 25%;
+    font-size: 25px;
+    color: gray;
+    height: 4vh;
+    border-bottom: 1px dashed;
+}
+
+.namePadd {
+    font-size: 20px;
+    padding: 10px;
+    margin: 0px;
+}
+
+.chatIcon {
+    width: 70%;
+    height: 40vh;
+    padding: 23px;
+    margin-left: auto;
+    position: inherit;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: gray;
+    top: 13vh;
+}

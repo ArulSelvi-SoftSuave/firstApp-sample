@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FirebaseAuthService } from '../firebase-auth.service';
+import { FirebaseAuthService } from '../service/firebase-auth.service';
 
 @Component({
   selector: 'app-register',

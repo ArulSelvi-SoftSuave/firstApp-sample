@@ -1,8 +1,9 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { FirebaseAuthService } from '../firebase-auth.service';
+import { FirebaseAuthService } from '../service/firebase-auth.service';
 import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee-form',
@@ -17,7 +18,8 @@ export class EmployeeFormComponent implements OnInit {
   public data: Observable<any>;
   @Output() list = new EventEmitter();
 
-  constructor(public fb: FormBuilder, public firebaseAuth: FirebaseAuthService,  public afs: AngularFirestore) { }
+  constructor(public fb: FormBuilder, public firebaseAuth: FirebaseAuthService,  public afs: AngularFirestore,
+    public router: Router) { }
 
   ngOnInit() {
 
@@ -71,6 +73,10 @@ export class EmployeeFormComponent implements OnInit {
     } else {
       return;
     }
+  }
+
+  empList() {
+    this.router.navigate(['employee-list'])
   }
 
 }

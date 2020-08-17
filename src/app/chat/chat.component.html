@@ -1,0 +1,27 @@
+<div id="chatMainContainer">
+  <div class="dashboard">
+    <div class="menu"><i class="fa fa-arrow-left" aria-hidden="true" (click)="dashboard()"></i></div>
+    <div class="title"><p>Chat</p></div>
+  </div>
+</div>
+<div id="chatContent" *ngIf="participantList.length > 0">
+  <div class="part">
+    <P>Participant</P>
+  </div>
+  <div class="userlist">
+    <div *ngFor="let list of participantList">
+      <p (click)="chatPage(list)" *ngIf="list.email !== email" class="namePadd">{{list.FullName}}</p>
+    </div>
+  </div>
+  <div class="chatText" *ngIf="isChat">
+    <app-chat-content [chatData]="chatData"></app-chat-content>
+  </div>
+  <div class="chatIcon" *ngIf="!isChat">
+    <i class="fa fa-comments" aria-hidden="true" style="font-size: 55px;"></i>
+    <div style="margin: 10px 10px;     font-size: 44px;"><p>Welcome to {{userName}}</p></div>
+    <!-- <p>Welcome to {{userName}}</p> -->
+  </div>
+</div>
+<div id="chatContent" *ngIf="participantList.length === 0">
+    <p>No data found</p>
+</div>

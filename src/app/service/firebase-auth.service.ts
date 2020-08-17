@@ -21,24 +21,26 @@ export class FirebaseAuthService {
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
     ) { 
-      this.collection = this.afs.collection('user');
     }
 
     createAccount(data: any): Promise<any>{
-      let fire = this.collection.add(data);
-      console.log(fire);
-      return fire;
+      return this.afs.collection('user').add(data);
     }
 
-    async getUserList(): Promise<any> {
-      let result;
-      this.collection.valueChanges().subscribe((data: any) => {
-        if(data){
-          result = data;
-          console.log(data);
-        }
-      });
-      return result;
+    getUserList() {
+      return this.afs.collection('user').valueChanges();
+    }
+
+    createEmpAccount(data: any): Promise<any>{
+      return this.afs.collection('employee').add(data);
+    }
+    
+    getEmployeeList() {
+      return this.afs.collection('employee').valueChanges();
+    }
+
+    getChatMessage() {
+      return this.afs.collection('text-chat', ref => ref.orderBy('timeStamp')).valueChanges();
     }
 
       // Sign in with Google
@@ -64,12 +66,6 @@ export class FirebaseAuthService {
     return this.afAuth.auth
           .signInWithPopup(new auth.FacebookAuthProvider())
           .then(res => console.log(res));
-  }
-  
-  createEmpAccount(data: any): Promise<any>{
-    let fire = this.afs.collection('employee').add(data);
-    console.log(fire);
-    return fire;
   }
 
 

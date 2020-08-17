@@ -1,0 +1,25 @@
+<div class="chatRoom">
+  <p>{{chatData.FullName}}</p>
+</div>
+<div id="chatTextContainer">
+    <div *ngFor="let msg of messageList">
+
+      <div *ngIf="(msg.senderID === email || msg.receiverID === email) && (msg.senderID === chatData.email || msg.receiverID === chatData.email)">
+        <!-- LoggedIn user Messages are displayed right side -->
+        <div *ngIf="msg.senderID === email" style="text-align: right;">
+          <p class="right-time">{{msg?.timeStamp | date: "hh:mm a"}}</p>
+          <p class="right-msg" [innerText]="msg?.messageBody"></p>
+        </div>
+
+        <!-- Participant user messages are displayed left side -->
+        <div *ngIf="msg.senderID === chatData.email">
+              <p class="left-time">{{msg?.senderName}}, {{msg?.timeStamp | date: "hh:mm a"}}</p>
+              <p class="left-msg" [innerText]="msg?.messageBody"></p>
+        </div>  
+      </div>
+    </div>
+</div>
+<div class="textBar">
+  <div class="send-icon"><i class="fa fa-paper-plane" aria-hidden="true" (click)="sendMessage(textMessage)"></i></div>
+  <textarea placeholder="Type the message" class="textbarArea" [(ngModel)]="textMessage"></textarea>
+</div>

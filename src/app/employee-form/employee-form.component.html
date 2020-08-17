@@ -1,49 +1,54 @@
 <div id="empContainer">
+  <div class="dashboard">
+    <div class="menu"><i class="fa fa-arrow-left" aria-hidden="true" (click)="empList()"></i></div>
+    <div class="title"><p>Employee Form</p></div>
+  </div>
+</div>
+<div id="empMainContainer">
   <form [formGroup]="empForm">
     <div>
       <p class="formheading">Basic Info</p>
       <div class="labelheading">
-        <label class="first">FirstName</label>
-        <label class="last">LastName</label>
-        <label class="age">Age</label>
+        <p class="first">FirstName</p>
+        <p class="last">LastName</p>
       </div>
       <div>
         <input type="text" class="inputField" placeholder="Firstname" formControlName="firstName"/>
         <input type="text" class="inputField" placeholder="Lastname" formControlName="lastName"/>
-        <input type="text" class="inputField" placeholder="Age" formControlName="age"/>
       </div>
       <div class="labelheading">
-        <label class="emailAdd">Email</label>
-        <label class="phonoNo">PhoneNo</label>
-        <label class="mobileNo">MobileNo</label>
+        <p class="first emailAdd">Email</p>
+        <p class="last">MobileNo</p>
       </div>
       <div>
         <input type="email" class="inputField" placeholder="Email" formControlName="email"/>
-        <input type="number" class="inputField" placeholder="PhonoNo" formControlName="phoneNo"/>
         <input type="number" class="inputField" placeholder="MobileNo" formControlName="mobileNo"/>
       </div>
       <div class="labelheading">
-        <label class="emailAdd">Address</label>
-        <label class="city">City</label>
-        <label class="state">State</label>
+        <p class="first address">Address</p>
+        <p class="last state">State</p>
       </div>
       <div>
         <input type="text" class="inputField" placeholder="Address" formControlName="address"/>
-        <input type="text" class="inputField" placeholder="city" formControlName="city"/>
         <input type="text" class="inputField" placeholder="state" formControlName="state"/>
       </div>
 
       <p class="formheading">employee details</p>
       <div class="labelheading">
-        <label class="emailAdd">Department</label>
-        <label class="role">Role</label>
-        <label class="expriance">Work experience</label>
+        <p class="dept">Department</p>
+        <p class="last role">Role</p>
       </div>
       <div>
         <input type="text" class="inputField" placeholder="Department" formControlName="department"/>
         <input type="text" class="inputField" placeholder="Role" formControlName="role"/>
-        <input type="number" class="inputField" placeholder="Experience" formControlName="experience"/>
+      
 
+      </div>
+      <div class="labelheading">
+        <p class="first expriance">Work experience</p>
+      </div>
+      <div>
+        <input type="number" class="inputField" placeholder="Experience" formControlName="experience"/>
       </div>
       <div class="but">
           <button class="button buttonColor" (click)="save()">Save</button>

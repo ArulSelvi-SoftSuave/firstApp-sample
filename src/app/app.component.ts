@@ -11,10 +11,11 @@ export class AppComponent {
   title = 'firstApp';
   constructor(public afAuth: AngularFireAuth, private router: Router) {}
   ngOnInit() {
+    let userId = localStorage.getItem('user');
     this.afAuth.authState.subscribe(user => {
       console.log(user);
-    if (user) {
-    // go to home page
+    if (user || userId) {
+      // this.router.navigate(['dashboard']);
     } else {
       this.router.navigate(['login']);
     }

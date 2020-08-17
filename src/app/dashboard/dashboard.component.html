@@ -4,6 +4,10 @@
     <i class="fa fa-server empIcon" aria-hidden="true"></i>
     <label>Employee</label>
   </div>
+  <div class="menulist" (click)='chat()'>
+    <i class="fa fa-comments empIcon" aria-hidden="true"></i>
+    <label>Chat</label>
+  </div>
 </div>
 <div id="mainContainer">
   <div *ngIf='isdashboard'>
@@ -16,7 +20,7 @@
       Welcome to this app
     </div>
   </div>
-  <div *ngIf="isEmpShow">
+  <!-- <div *ngIf="isEmpShow">
     <div class="dashboard">
       <div class="title"><p>Employee</p></div>
       <div class="power-icon"><i class="fa fa-indent" aria-hidden="true" (click)="form()"></i></div>
@@ -29,11 +33,10 @@
   <div *ngIf="isForm">
     <div class="dashboard">
       <div class="menu"><i class="fa fa-arrow-left" aria-hidden="true" (click)="employee()"></i></div>
-      <div class="title" style="    margin: -16px 0px;"><p>Employee Form</p></div>
-      <!-- <div class="power-icon"><i class="fa fa-indent" aria-hidden="true" (click)="form()"></i></div> -->
+      <div class="title" style="margin: -16px 0px;"><p>Employee Form</p></div>
     </div>
     <div>
       <app-employee-form (list)="employee()"></app-employee-form>
     </div>
-  </div>
+  </div> -->
 </div>

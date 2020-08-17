@@ -13,30 +13,11 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
-import { EmployeeListComponent } from './employee-list/employee-list.component'
-// import {
-// SocialLoginModule,
-// GoogleLoginProvider,
-// FacebookLoginProvider,
-// AuthServiceConfig,
-// } from "angular-6-social-login";
-// import { FirebaseAuthService } from './firebase-auth.service';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { ChatComponent } from './chat/chat.component';
+import { ChatContentComponent } from './chat-content/chat-content.component';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
 
-// export function getAuthServiceConfigs() {
-//   let config = new AuthServiceConfig(
-//       [
-//         // {
-//         //   id: FacebookLoginProvider.PROVIDER_ID,
-// 	      // provider: new FacebookLoginProvider("Your-Facebook-app-id")
-//         // },
-//         {
-//           id: GoogleLoginProvider.PROVIDER_ID,
-// 	       provider: new GoogleLoginProvider("967608344961-m43bf75fvm2lb42hast0je7249j0rel6.apps.googleusercontent.com")
-//         },
-//       ]
-//   );
-//   return config;
-// }
 
 @NgModule({
   declarations: [
@@ -45,7 +26,9 @@ import { EmployeeListComponent } from './employee-list/employee-list.component'
     RegisterComponent,
     DashboardComponent,
     EmployeeFormComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    ChatComponent,
+    ChatContentComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +38,8 @@ import { EmployeeListComponent } from './employee-list/employee-list.component'
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
     // SocialLoginModule,
     // AuthServiceConfig,
     // GoogleLoginProvider,

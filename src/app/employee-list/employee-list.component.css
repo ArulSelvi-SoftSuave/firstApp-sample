@@ -1,8 +1,8 @@
 #empListContainer {
     height: -webkit-fill-available;
     position: fixed;
-    width: 80%;
-    margin: 15px 25px;
+    width: 95.5%;
+    margin: 25px 25px;
     background: whitesmoke;
     padding: 15px 15px;
 }
@@ -23,4 +23,32 @@ table{
 
 .content {
     padding: 8px 0px;
+}
+
+.dashboard {
+    background-color: #8a2be27a;
+    padding: 26px 0px;
+}
+
+.menu {
+    text-align: left;
+    font-size: 18px;
+    margin: 0px 0px -17px 13px;
+    color: white;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: -35px;
+    font-size: 26px;
+    color: white;
+}
+
+.power-icon {
+    margin: 0px 0px 0px -10px;
+    text-align: end;
+    width: 100%;
+    font-size: 16px;
+    color: white;
 }

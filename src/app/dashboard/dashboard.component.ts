@@ -17,12 +17,15 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+  chat() {
+    this.router.navigate(['chat']);
+  }
   employee() {
-    this.isEmpShow = true;
-    this.isdashboard = false;
-    this.isForm = false;
+    // this.isEmpShow = true;
+    // this.isdashboard = false;
+    // this.isForm = false;
 
-    // this.router.navigate(['employee-form']);
+    this.router.navigate(['employee-list']);
   }
 
   menuFun() {

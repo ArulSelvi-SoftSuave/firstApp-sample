@@ -1,3 +1,9 @@
+<div>
+<div class="dashboard">
+  <div class="menu"><i class="fa fa-arrow-left" aria-hidden="true" (click)="dashboard()"></i></div>
+  <div class="title"><p>Employee</p></div>
+  <div class="power-icon"><i class="fa fa-indent" aria-hidden="true" (click)="form()"></i></div>
+</div>
 <div id="empListContainer">
   <div class="listTitle">
     <label>Employee List</label>
@@ -6,22 +12,24 @@
     <tr class="tableheading">
       <th>FirstName</th>
       <th>LastName</th>
-      <th>Age</th>
       <th>Email</th>
-      <th>Phone</th>
       <th>Mobile</th>
       <th>Department</th>
       <th>Role</th>
+      <th>Address</th>
+      <th>State</th>
     </tr>
     <tr *ngFor="let data of employeeData">
       <td class="content">{{data.firstName}}</td>
       <td class="content">{{data.lastName}}</td>
-      <td class="content">{{data.age}}</td>
       <td class="content">{{data.email}}</td>
-      <td class="content">{{data.phoneNo}}</td>
       <td class="content">{{data.mobileNo}}</td>
       <td class="content">{{data.department}}</td>
       <td class="content">{{data.role}}</td>
+      <td class="content">{{data.address}}</td>
+      <td class="content">{{data.state}}</td>
     </tr>
   </table>
 </div>
+</div>
+
